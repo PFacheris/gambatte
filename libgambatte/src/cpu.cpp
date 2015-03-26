@@ -59,9 +59,8 @@ long CPU::runFor(unsigned long const cycles) {
 	unsigned address;
 	for (int i = 0; i < NUM_LOGGED_ADDRESSES; i++) {
 		address = addressLogArray[i];
-		if ((val = mem_.read(address, 0)) != 0x0) {
-			printf("%04x:%02x\n", address, val);
-		}
+		val = mem_.read(address, 0);
+		printf("%04x:%02x\n", address, val);
 	}
 
 	return csb;
